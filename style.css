@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Epilogue:wght@500;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;1,400;1,500&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400&family=Roboto:wght@100&family=Rubik:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Epilogue', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+body {
+    position: relative;
+    background-color: #fafafa;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0.8rem 0%;
+}
+
+/*navbar desktop start*/
+
+.container { /*width of the navbar*/
+    width: 100%;
+}
+
+.logo {
+    margin-right: 4rem; 
+} 
+
+.nav-menu { /*text in the navbar*/
+    display: flex;
+    align-items: center;
+    gap: 4.375rem;
+    width: 100%;
+}
+
+
+input {
+    display: none;
+}
+
+
+li, a, button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    list-style-type: none;
+    color: #696969;
+    font-family: 'Epilogue', sans-serif;
+}
+
+
+a.register button {
+    margin: 0 1.5625rem;
+}
+
+
+div.buttons { /*shifts the buttons to the right*/
+    margin-left: auto;
+}
+
+
+.login button, .register button {
+    border: solid 2px #696969;
+    padding: .5625rem;
+    font-size: 1rem;
+    border-radius: .7rem;
+    background-color: #fafafa;
+}
+
+.login button {
+    border: none;
+    background-color: #fafafa;
+}
+
+/*Buttons end*/
+
+.navbar { 
+    width: 100%;
+    min-width: 4.375rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+i {
+    color: #141414;
+}
+
+.arrow-down {
+    color: #141414;
+    font-size: 1rem;
+}
+
+/*navbar desktop end*/
+
+
+/*HAMBURGER MENU START*/
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    background-color: #141414;
+}
+
+/*HAMBURGER MENU END*/
+
+/*HEADER END*/
+
+
+/*START THE MAIN SECTION WITH 2 CONTAINERS*/
+
+/*START CONTAINERS*/
+
+main {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 6.875rem; /*it is important cause we use position fixed. It must be equal to the height of the nav menu*/
+}
+
+.container1, .container2 {
+    width: 50%;
+}
+
+.container1 {
+    display: flex;
+    margin-top: 7rem;
+    flex-direction: column;
+}
+
+h1, p, button.learn, div.client {
+    margin-left: 10rem;
+    color: #141414;
+    margin-top: 5rem;
+}
+
+h1 {
+    font-size: 5rem; 
+    margin-top: 3rem;
+    line-height: 4.3rem;
+}
+
+p {
+    font-size: 1.125rem;
+    color: #696969;
+    line-height: 1.5rem;
+    opacity: 70%;
+    font-weight: 500;
+    z-index: -1!important;
+}
+
+button.learn {
+    max-width: 10rem;
+    border: solid 1px #141414;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    background-color: #141414;
+}
+
+button.learn a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fafafa;
+    
+}
+
+button.learn:hover, button.learn a:hover { 
+    cursor: pointer;
+}
+
+div.client {
+    width: 100%;
+    max-width: 30rem; 
+    display: flex;
+    justify-content: space-between;   
+}
+
+/*CONTAINER 2 START*/
+
+.container2 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+img.mobile {
+    display: none;
+}
+
+img.hero {
+    display: block;
+    height: 100%; /*with 90% looks also good*/
+    width: 70%;
+}
+
+/*CONTAINER 2 END*/
+
+/*Footed start*/
+
+footer div, footer div > * {
+    text-align: center;
+    margin-top: 10rem;
+    color: #141414;
+    font-size: 0.8rem;
+    bottom: 0;
+    width: 100%;
+}
+
+/*Footer end*/
+
+@media only screen and (max-width: 600px) {
+    br {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+    html, body { 
+        overflow-x: hidden;
+    }
+
+    body {
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /*start animation which turns it into an X*/
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0; /* it won´t be displayed on screen*/
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /*end animation which turns it into an X*/
+
+    /*start navmenu when we click on the hamburger menu*/
+
+    .nav-menu { /*class of the ul which contains the list items (menu items) - mobile hamburger menu version*/
+        position: fixed;
+        right: -100%;  /*by this the menu items won´t be displayed on large screen*/
+        top: 1.875rem; 
+        margin-top: 1.875rem; /*top and margin top must be the same number!!*/
+        gap: 0;
+        flex-direction: column;
+        background-color: #fafafa;
+        width: 100%;
+        padding-bottom: 6.25rem; /*needed*/
+    }
+
+    .nav-item { /*class of each li element in ul*/
+        margin: 1rem;
+        align-self: flex-start; /*it pushed the elements to the left*/
+    }
+
+    .subnav-item {
+        margin-left: 1.2rem;
+        display: block;
+    }
+
+    .subnav-item:first-child {
+        margin-top: 1rem;
+
+    }
+
+    .nav-menu.active { /*when we activate this we will see it on the screen, it´s needed because of we set it -100%*/
+        right: 0;
+        position: fixed;
+        top: 1.875rem; /*must be equal to .nav-menu´s top and margin-top*/
+        max-width: 50%;
+    }  
+
+    ul.submenu-features a.nav-link, ul.submenu-company a.nav-link { /*submenu texts*/
+        color: #696969;
+        margin-left: 0.625rem;
+    } 
+
+    i { /*icons*/
+        margin-left: 0.625rem;
+    } 
+
+    div.buttons { 
+        background-color: #fafafa;
+        margin: auto; /*shifts the buttons in the header to the right*/
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    a.register {
+        padding-left: 0;
+    }
+
+    a.login button, a.register button {
+        width: 7.5rem;
+        line-height: 2rem;
+    }
+
+    a.login button {
+        border: none;
+        margin-top: -10rem; 
+    }
+
+    a.register button {
+        margin-bottom: 10%;
+        margin-left: 0rem;
+        border: 2px solid #696969;
+        border-radius: 0.7rem;
+    }
+
+/* dropdowns start */
+    ul.submenu-features, ul.submenu-company { /*with this I can move the subcontainers*/
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 9.0625rem; 
+        display: none; /*it´s needed otherwise the dropdown doesn´t work*/
+        margin-top: 0%;
+        line-height: 1rem;
+    } 
+
+    ul li label, li a, i.arrow-down, i, a.login button, a.register button {
+        color: #696969;
+    } 
+   
+
+/*dropdowns end */
+
+/*SUBMENU DROPDOWN IN HAMBURGER MENU START*/
+    input {
+        display: none;
+    }
+
+    [id^=btn]:checked + ul.submenu-features, [id^=btn]:checked + ul.submenu-company {
+        display: block;
+        height: 100%;
+        max-height: 62.5rem;
+        line-height: 2rem;
+    } 
+
+    ul.submenu-features, .ul.submenu-company {
+        height: 100%;
+        overflow: hidden;
+        border: none;
+    }
+
+/*SUBMENU DROPDOWN IN HAMBURGER MENU END*/
+
+
+/*end navmenu active state (hamburger menu) on mobile*/
+
+
+/*START CONTAINERs WITH IMAGE media query*/
+ 
+    main {
+        flex-direction: column;
+        justify-content: space-around; /*not necessary*/
+        margin-top: 2.8125rem; /*it is important cause we use position fixed. It must be equal to the height of the nav menu*/
+        max-width: 100%;
+        height: auto;
+    }
+
+    .container { /*this is the width of the navbar*/
+        width: 100%;
+    }
+
+    .container1, .container2 { /*needed this solves overflow and sizing issue*/
+        width: 100%;
+        height: auto;
+    }
+
+    .container1 {
+        margin-top: 2rem;
+        order: 2;
+    }
+
+    h1 br {
+        display: none;
+    }
+    
+    h1 { 
+        font-size: 2.2rem;
+        line-height: 3rem;
+    }
+
+    h1, p, button.learn, div.client {
+        margin: auto;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    p {
+        line-height: 1.4rem;
+    }
+
+
+    div.client { 
+        margin-top: 3rem;
+        margin-bottom: 4rem;
+        max-width: 100%;
+        height: auto;
+    }
+
+    div.client img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    img.hero {
+        display: none;
+    }
+
+    img.mobile { /*width 100%, height auto will make the image responsive*/
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: 1.9rem;
+        overflow-x: hidden;
+    }
+
+}
+
+@media only screen and (max-width: 374px) {
+    div.client {
+        margin-left: 0%;
+        margin-right: 0%;
+        max-width: 50%;
+        gap: 0;
+    }
+
+    div.client img {
+        max-width: 50%;
+        max-height: auto;
+    }
+
+}
+
+
+/*start media query for desktop dropdowns & learn more button & hover states for header*/
+@media only screen and (min-width: 1025px) {
+
+.submenu-features, .submenu-company { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 9.0625rem;
+    border: 1px solid black;
+    padding: 0.5rem 0.75rem;
+    display: none;
+}
+
+.submenu-company {
+    max-width: 7.8125rem;
+}
+
+.subnav-item { /*this makes the text in the boxes appear*/
+    display: block;
+} 
+
+.submenu-features.active, /*the containers of the dropdown menus active state*/
+.submenu-company.active {
+    display: block;
+    margin-top: 0.625rem;
+    background-color: #fff;
+    position: absolute;
+    line-height: 1.875rem;
+    border-radius: 10%;
+    height: auto;
+}
+
+/*start header hover states*/
+.first:hover, .second:hover, .nav-link:hover, i:hover {
+    color: #141414;
+}
+
+.login button, .first, .second, .register button:hover {
+    cursor: pointer;
+}
+/*end header hover states*/
+
+/*learn more button*/
+button.learn.active {
+    animation: all 2s ease;
+    background-color: #fafafa;
+    color: #141414; /*this is not what causes the color issue on mobile*/
+}
+
+.learn-text.active {
+    color: #141414;
+}
+
+#arrow1, #arrow2 {
+    color:#696969
+}
+
+
+}
+
+/*end media query for desktop dropdowns*/
+
+
+
+
+   
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
